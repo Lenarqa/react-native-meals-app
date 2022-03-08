@@ -1,35 +1,23 @@
 import React from "react";
 import {
-  View,
   StyleSheet,
-  Text,
-  Button,
   FlatList,
-  TouchableOpacity,
 } from "react-native";
+import CategoryGridTyle from "../components/CategoryGridTyle";
 
 import { CATEGORIES } from "../data/dummy-data";
 
 const CategoriesScreen = (props) => {
   const renderGridItem = (itemData) => {
-    console.log(itemData);
     return (
-      <TouchableOpacity
-        style={styles.gridItem}
-        activeOpacity={0.6}
-        onPress={() => {
-          props.navigation.navigate({
-            routeName: "CategoryMeals",
-            params: {
-              categoryId: itemData.item.id,
-            },
-          });
-        }}
-      >
-        <View>
-          <Text>{itemData.item.title}</Text>
-        </View>
-      </TouchableOpacity>
+      <CategoryGridTyle title={itemData.item.title} color={itemData.item.color} onSelect={()=>{
+        props.navigation.navigate({
+          routeName: "CategoryMeals",
+          params: {
+            categoryId: itemData.item.id,
+          },
+        });
+      }}/>
     );
   };
 
@@ -52,16 +40,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  gridItem: {
-    flex: 1,
-    margin: 5,
-    borderColor: "black",
-    borderWidth: 1,
-    padding: 10,
-    alignItems: "center",
-    justifyContent: "center",
-    height: 150,
   },
 });
 
