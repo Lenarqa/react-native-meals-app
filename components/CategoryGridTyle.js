@@ -26,6 +26,11 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 10,
     overflow: "hidden",
+    elevation: 3,
+    shadowColor: "black",
+    shadowOpacity: 0.6,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 15,
   },
   container: {
     flex: 1,
@@ -34,11 +39,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "flex-end",
     justifyContent: "flex-end",
-    shadowColor: "black",
-    shadowOpacity: 0.6,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 15,
-    elevation: 3,
     padding: 10,
   },
   title: {
